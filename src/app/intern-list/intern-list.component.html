@@ -1,0 +1,71 @@
+<div class="container">
+<div class="body"  >
+  <br><br>
+  <div class="d-flex">
+       
+    <input type="text"  class="searchTerm" placeholder="Search Here" [(ngModel)]="term">
+  </div>        
+    <table id="table" class="table">
+   
+     <thead class="table-dark">
+<tr >
+  <th scope="col">topic</th>
+  <th scope="col">start</th>
+  <th scope="col">end</th>
+  <th scope="col">relationship</th>
+  <th scope="col">state</th>
+  <th scope="col">tutor</th>
+  <th scope="col">report</th>
+ 
+  
+  <th scope="col"> certificate</th>
+
+  <th scope="col" colspan="3">options</th>
+</tr>
+</thead>
+<tbody  *ngFor="let item of dataArray | filter:term,index as i" >
+       <tr [style.background-color]="(item.state == 1? 'yellow' : 'red')  ">
+                 <td><h5 class="card-title">{{item.topic}}</h5></td>
+                  <td><h5 class="card-title">{{item.start}}</h5></td>
+                
+                  <td><p class="card-text">{{item.end}}</p></td>  
+                  <td><p class="card-text">{{item.relationship}}</p></td>
+                  <td><p class="card-text">{{item.state}}</p></td> 
+                  <td><p class="card-text">{{item.tutor}}</p></td>
+                    <td><p class="card-text">{{item.certificate}}</p></td>
+                  <td><button type="button" class="btn btn-primary" (click)="updatep(item.id)">update</button></td>
+               <td><button class="btn btn-info" data-bs-toggle="modal" uk-toggle="target: #modal-example2">Update report</button>
+               </td>
+               
+               <td><button  class="btn btn-danger" (click)="delete(item.id)">delete</button>
+               </td>
+               <td> <button type="button" class="btn btn-success"   (click)="done(item.id)">done</button>
+
+               </td>
+                </tr>
+             
+                <div id="modal-example2" uk-modal>
+                  <div class="uk-modal-dialog uk-modal-body">
+                      <h2 class="uk-modal-title">Headline</h2>
+                      <form>
+                         <input type="file"  ngModel name="fileUpload" #fileUpload="ngModel"  accept=".pdf,.doc" (change)="upload($event,item.id)">
+                        
+                      
+                         
+              
+              
+                        </form>
+                      </div>
+                     
+                  </div>
+              
+                 
+          
+</tbody>
+              </table> 
+              
+             
+</div>
+</div>
+              <!-- This is the modal -->
+            

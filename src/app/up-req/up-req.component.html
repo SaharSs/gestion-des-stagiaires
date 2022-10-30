@@ -1,0 +1,38 @@
+<div class="container">
+
+    <form  #f="ngForm" (ngSubmit)="update(f)">
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="dataProduct.firstName">
+       
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="dataProduct.lastName">
+        <input type="text" class="form-control" name="email" [(ngModel)]="dataProduct.email">
+        <input type="number" class="form-control" name="Cin" [(ngModel)]="dataProduct.Cin">
+        <input type="number" class="form-control" name="tel" [(ngModel)]="dataProduct.tel">
+        <input id="date" type="date" name="t" #t="ngModel" ngModel required value="2022-01-01">
+
+        <p>Please select your favorite Web language:</p>
+      <input type="radio" id="M" name="p" #p="ngModel" ngModel required value="M">
+      <label for="M">M</label><br>
+      <input type="radio" id="W" name="p" #p="ngModel" ngModel required value="W">
+      <label for="W">W</label><br>  
+      <input type="text" class="form-control" name="name" [(ngModel)]="dataProduct.name">
+        <input type="text" class="form-control" name="adressl" [(ngModel)]="dataProduct.adressl">
+        <input type="text" class="form-control" name="tell" [(ngModel)]="dataProduct.tell">
+        <input type="text" class="form-control" name="speciality" [(ngModel)]="dataProduct.speciality">
+      
+      
+         <select id="monselect" name="level"   #level="ngModel" ngModel>
+          <option >level</option>
+          <option value="1">bac+1</option>
+          <option value="2">bac+2</option>
+          <option value="3">bac+3</option>
+          <option value="4">bac+4</option>
+          <option value="5">bac+5</option>
+          <option value="6">>bac+5</option>
+         </select>
+        <input type="text" class="form-control" name="state" [(ngModel)]="dataProduct.state">
+        <input type="text" class="form-control" name="uid" [(ngModel)]="dataProduct.uid">
+      
+        <button class="btn btn-success" type="submit">Update now!</button>
+      </form>
+      </div>
+      

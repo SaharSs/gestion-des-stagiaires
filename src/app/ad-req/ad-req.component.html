@@ -1,0 +1,118 @@
+<div class="container">
+  <div style="margin:20px;">
+
+  <div class="body">
+    
+    <br><br>
+    <div class="d-flex">
+                  
+      <input type="text"  class="searchTerm" placeholder="Search Here" [(ngModel)]="term">
+    </div>      
+      <table id="table" class="table table-bordered">
+     
+       <thead class="table-dark" style="width:500px;">
+  <tr  >
+    <th scope="col">firstName</th>
+    <th scope="col">lastName</th>
+    <th scope="col">Cin</th>
+    <th scope="col">tel</th>
+    <th scope="col">email</th>
+    <th scope="col">p</th>
+    <th scope="col">name</th>
+    <th scope="col">adressl</th>
+    <th scope="col">tell</th>
+    <th scope="col">se</th>
+    <th scope="col">level</th>
+    <th scope="col">speciality</th>
+    <th scope="col" > birth</th>
+     <th scope="col">cv</th>
+     <th scope="col">state</th>
+     <th scope="col">uid</th>
+     
+    <th scope="col" colspan="3">options</th>
+  </tr>
+  </thead>
+
+    <tbody  *ngFor="let item of dt | filter:term,index as i" >
+    
+  <tr>
+               
+                    <td><h5 class="card-title">{{item.firstName}}</h5></td>
+                    <td><h5 class="card-title">{{item.lastName}}</h5></td>
+                  
+                    <td><p class="card-text">{{item.Cin}}</p></td>  
+                    <td><p class="card-text">{{item.tel}}</p></td>
+                    <td><p class="card-text">{{item.email}}</p></td>
+                    <td><p class="card-text">{{item.p}}</p></td>
+                    <td><p class="card-text">{{item.name}}</p></td>
+                    <td><p class="card-text">{{item.adressl}}</p></td>
+                    <td><p class="card-text">{{item.tell}}</p></td>
+                    <td><p class="card-text">{{item.se}}</p></td>
+                    <td><p class="card-text">{{item.level}}</p></td>
+                   
+                    <td><p class="card-text">{{item.speciality}}</p></td>
+                    <td><p class="card-text">{{item.date}}</p></td>
+                    
+                    <td></td>
+                  
+                    <td><p class="card-text">{{item.state}}</p></td>
+                  
+                    <td><p class="card-text">{{item.uid}}</p></td>
+                  
+                   
+                   
+                    <td><button  class="btn btn-primary" (click)="updatec(item.id)">update</button>
+                    </td>
+                    <td><button class="btn btn-danger" (click)="delete(item.id)">delete</button>
+                    </td>
+                   
+                   
+                  </tr>
+                 
+            
+  </tbody>
+               </table> 
+                 
+  <button class="uk-button uk-button-default uk-margin-small-right" class="btn btn-primary" type="button" uk-toggle="target: #modal-example">add</button> 
+        
+  
+               <div id="modal-example" uk-modal>
+                <div class="uk-modal-dialog uk-modal-body">
+                    <h2 class="uk-modal-title">Headline</h2>
+                    <form #f="ngForm" (ngSubmit)="addNewuser(f)" id="stripe-login">
+              
+                      <label for="firstName">firstName</label>
+                      <input type="text" name="firstName" #firstName="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">firstName  is required</p>
+                      <label for="lastName">lastName</label>
+                      <input type="text" name="lastName" #lastName="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">lastName  is required</p>
+                      <label for="cin">Cin</label>
+                      <input type="number" name="Cin" #Cin="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="Cin.invalid && Cin.touched">Cin  is required</p>
+                      <label for="tel">tel</label>
+                      <input type="number" name="tel" #tel="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="tel.invalid && tel.touched">tel  is required</p>
+                      <label for="email">email</label>
+                      <input type="text" name="email" #email="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="email.invalid && email.touched">email  is required</p>
+                      <label for="name">name</label>
+                      <input type="text" name="name" #name="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="name.invalid && name.touched">name is required</p>
+                      <label for="name">adressl</label>
+                      <input type="text" name="adressl" #adressl="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="adressl.invalid && adressl.touched">adressl is required</p>
+                      <label for="name">tell</label>
+                      <input type="number" name="tell" #tell="ngModel" ngModel required>
+                      <p class="alert alert-danger" *ngIf="tell.invalid && tell.touched">tell is required</p>
+                      
+                      <input type="submit" name="submit" class="btn btn-success" value="add">
+                   </form>
+                </div>
+            </div>
+       </div>         
+  </div>             
+  </div>
+                <!-- This is the modal -->
+              
+  

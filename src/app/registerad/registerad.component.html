@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Stackfindover: Sign in</title>
+
+</head>
+
+<body>
+ <h1 class="center">Sign up</h1>
+              <form #f="ngForm" (ngSubmit)="register(f)" id="stripe-login">
+                
+                  <label for="firstName">firstName</label>
+                  <input type="text" name="firstName" #firstName="ngModel" ngModel required>
+                  <p class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">firstName  is required</p>
+            
+                      <br><br>             
+                    <label for="lastName">lastName</label>
+                    <input type="text" name="lastName"  #lastName="ngModel" ngModel required>
+                    <br><br>
+            
+                  
+                    <label for="email">Email</label>
+                    <input type="email" name="email" #email="ngModel" ngModel required>
+                   <br><br>
+                               
+                
+           
+
+                
+                
+                    <label for="password">Password</label>
+                    
+                
+                  <input type="password" name="password" #password="ngModel" ngModel required minlength="8">
+                  
+                <br><br>
+                
+                    <label for="password">Password</label>
+                    <input type="password"  name="confirmPassword" #confirmPassword="ngModel" ngModel required minlength="8">
+            <p class="alert alert-danger" *ngIf="password.value!==confirmPassword.value && confirmPassword.touched">not equal</p>
+          
+                <br><br>
+                
+                  <label for="pet-select">Choose :</label>
+                   <select name="role" id="pet-select" #role="ngModel" ngModel required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="admin">admin</option>
+                    <option value="intern">intern</option>
+                    <option value="responsible">responsible</option>
+                    
+                </select><br><br>
+                <div>
+                  <input type="submit" name="submit" class="btn btn-success" value="register">
+                </div>
+              
+              </form>
+        </body>
+
+</html>

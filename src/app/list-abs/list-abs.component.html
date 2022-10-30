@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="body"  >
+    <br><br>
+
+    <div class="d-flex">
+       
+      <input type="text"  class="searchTerm" placeholder="Search Here" [(ngModel)]="term">
+    </div>    
+    <table id="table" class="table">
+   
+     <thead class="table-dark">
+<tr >
+  <th scope="col">Cin</th>
+  <th scope="col">start</th>
+  <th scope="col">end</th>
+  <th scope="col">comment</th>
+  <th scope="col">date</th>
+  <th scope="col">fav</th>
+  <th scope="col">firstName</th>
+  <th scope="col"> listName</th>
+
+  <th scope="col" colspan="3">options</th>
+</tr>
+</thead>
+<tbody  *ngFor="let item of dataArray | filter:term,index as i,let last = last" >
+  <tr *ngIf="term">
+                 <td><h5 class="card-title">{{item.Cin}}</h5></td>
+                  <td><h5 class="card-title">{{item.start}}</h5></td>
+                   <td><p class="card-text">{{item.end}}</p></td>  
+                  <td><p class="card-text">{{item.comment}}</p></td>
+                  <td><p class="card-text">{{item.date}}</p></td>
+                  <td><p class="card-text">{{item.fav}}</p></td> 
+
+                  <td><p class="card-text">{{item.firstName}}</p></td>
+                  <td><p class="card-text">{{item.lastName}}</p></td>
+                  <div *ngIf="last">
+                    {{i+1}}days
+                  </div>
+                   </tr>
+             
+             
+                  
+                 </tbody>
+                 
+              </table> 
+              
+             
+</div>
+              <!-- This is the modal -->
+            
+</div>

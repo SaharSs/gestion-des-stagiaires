@@ -1,0 +1,75 @@
+<div class="d-flex">
+       
+    <input type="text"  class="searchTerm" placeholder="Search Here" [(ngModel)]="term">
+  </div>      
+
+<div *ngFor="let item of dataArray" >
+    <div *ngIf="item.uid==y">
+        <div *ngIf="item.state==2">
+    <p> Pending</p>
+<button type="button" (click)="update(item.id)">update inf</button>        
+</div>
+    <div *ngIf="item.state==0">
+        <p> refused</p>
+        </div>
+    
+    
+    <div *ngIf="item.state==1">
+        
+        <div class="body"  >
+    
+            <table id="table" class="table">
+           
+             <thead class="table-dark">
+        <tr >
+          <th scope="col">firstName</th>
+          <th scope="col">lastName</th>
+          <th scope="col">adress</th>
+          
+           <th scope="col" >options</th>
+            <th scope="col">report</th>
+         
+        </tr>
+        </thead>
+        <tbody  *ngFor="let item of dataArray | filter:term,index as i" >
+               <tr  *ngIf="item.state==1" >
+                         <td><h5 class="card-title">{{item.firstName}}</h5></td>
+                          <td><h5 class="card-title">{{item.lastName}}</h5></td>
+                        
+                         <td><p class="card-text">{{item.adress}}</p></td>
+                        
+                          <div *ngIf="item.uid==y">
+                              <td></td>
+                            <td><button class="btn btn-info" data-bs-toggle="modal" uk-toggle="target: #modal-example2">Update report</button>
+                           
+                            </td>
+                          
+                          </div>
+                        </tr>
+                        <div id="modal-example2" uk-modal>
+                            <div class="uk-modal-dialog uk-modal-body">
+                                <h2 class="uk-modal-title">Headline</h2>
+                                <form>
+                                   <input type="file"  ngModel name="fileUpload" #fileUpload="ngModel"  accept=".pdf,.doc" (change)="upload($event,item.id)">
+                                  
+                                
+                                   
+                        
+                        
+                                  </form>
+                                </div>
+                               
+                            </div>
+                       
+                  
+        </tbody>
+                      </table> 
+                      
+                     
+        
+                      <!-- This is the modal -->
+                    
+     </div>
+    </div>   
+    </div>
+</div>

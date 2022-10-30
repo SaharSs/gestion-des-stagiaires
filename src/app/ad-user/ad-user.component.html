@@ -1,0 +1,73 @@
+<div class="container">
+<div class="body"  >
+  <br><br>
+  <div class="d-flex">
+         
+    <input type="text"  class="searchTerm" placeholder="Search Here" [(ngModel)]="term">
+  </div>  
+    
+    <table  class="table table-bordered">
+     <thead class="table-dark">
+<tr >
+  <th scope="col">firstName</th>
+  <th scope="col">lastName</th>
+  <th scope="col">email</th>
+  <th scope="col">password</th>
+  <th scope="col">role</th>
+ 
+
+  <th scope="col" colspan="3">options</th>
+</tr>
+</thead>
+<tbody  *ngFor="let item of dataArray | filter:term" >
+        
+                <tr>
+                  <td><h5 class="card-title">{{item.firstName}}</h5></td>
+                  <td><h5 class="card-title">{{item.lastName}}</h5></td>
+                
+                  <td><p class="card-text">{{item.email}}</p></td>  
+                  <td><p class="card-text">{{item.password}}</p></td>
+                  
+                  <td><p class="card-text">{{item.role}}</p></td>
+                
+                  <td><button  type="button"  class="btn btn-primary" (click)="updatec(item.id)">update</button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-danger" (click)="delete(item.id)">delete</button>
+                                      </td>
+       
+                </tr>
+</tbody>
+              </table>
+              <button class="uk-button uk-button-default uk-margin-small-right" class="btn btn-primary" type="button" uk-toggle="target: #modal-example">Open</button> 
+            
+
+              <!-- This is the modal -->
+              <div id="modal-example" uk-modal>
+                  <div class="uk-modal-dialog uk-modal-body">
+                      <h2 class="uk-modal-title">Headline</h2>
+                      <form #f="ngForm" (ngSubmit)="addNewuser(f)" id="stripe-login">
+                
+                        <label for="firstName">firstName</label>
+                        <input type="text" name="firstName" #firstName="ngModel" ngModel required>
+                        <p class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">firstName  is required</p>
+                        <label for="lastName">lastName</label>
+                        <input type="text" name="lastName" #lastName="ngModel" ngModel required>
+                        <p class="alert alert-danger" *ngIf="lastName.invalid && lastName.touched">lastName  is required</p>
+                        <label for="email">email</label>
+                        <input type="email" name="email" #email="ngModel" ngModel required>
+                        <p class="alert alert-danger" *ngIf="email.invalid && email.touched">email  is required</p>
+                        <label for="password">password</label>
+                        <input type="text" name="password" #password="ngModel" ngModel required>
+                        <p class="alert alert-danger" *ngIf="password.invalid && password.touched">password  is required</p>
+                        <label for="role">role</label>
+                        <input type="text" name="role" #role="ngModel" ngModel required>
+                        <p class="alert alert-danger" *ngIf="role.invalid && role.touched">role  is required</p>
+                        <input type="submit" name="submit" class="btn btn-success" value="add">
+                     </form>
+                  </div>
+              </div>
+
+
+            </div>
+            </div>

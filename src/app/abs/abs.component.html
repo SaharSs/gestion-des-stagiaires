@@ -1,0 +1,24 @@
+<form  #f="ngForm"  (ngSubmit)='add(f)'>
+           
+              
+<p>justified absence</p>
+<input type="radio" id="html" name="fav" value="yes" #fav="ngModel" ngModel required>
+<label for="html">yes</label><br>
+<input type="radio" id="css" name="fav" #fav="ngModel" ngModel required value="no">
+<label for="css">no</label><br>
+<p>comment</p>
+
+<textarea id="w3review" name="comment"  #comment="ngModel" ngModel required rows="4" cols="50">
+</textarea>
+<p>Date</p>
+<input id="date" type="date" name="e" #e="ngModel" ngModel  >
+<p>start time</p>
+<input type="text" name="h"  #h="ngModel" ngModel  >
+<p>end time</p>
+<input  type="text" name="he"  #he="ngModel" ngModel  >
+
+<div>
+    <input type="submit" name="submit"  value="add">
+  </div>
+
+</form>

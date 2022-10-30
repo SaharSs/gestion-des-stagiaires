@@ -1,0 +1,21 @@
+<div class="container">
+
+    <form  #f="ngForm" (ngSubmit)="update(f)">
+        <input type="text" class="form-control" name="start" [(ngModel)]="dataProduct.start">
+       
+        <input type="text" class="form-control" name="end" [(ngModel)]="dataProduct.end">
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="dataProduct.firstName">
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="dataProduct.lastName">
+        <input type="text" class="form-control" name="Cin" [(ngModel)]="dataProduct.Cin">
+        <input type="text" class="form-control" name="fav" [(ngModel)]="dataProduct.fav">
+        <input type="date" class="form-control" name="date" #date="ngModel" ngModel >
+        
+      
+       
+        <button class="btn btn-success" type="submit">Update now!</button>
+      </form>
+      </div>
+      
+
+
+

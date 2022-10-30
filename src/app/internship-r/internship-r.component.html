@@ -1,0 +1,145 @@
+<div class="container">
+  {{u}}
+  <form  #f="ngForm" (ngSubmit)="addf(f)">
+  <h3>internship request</h3>
+
+<div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="FirstName" class="col-form-label">FirstName</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="FirstName" name="firstName" #firstName="ngModel" ngModel required class="form-control" aria-describedby="passwordHelpInline">
+      <p class="alert alert-danger" *ngIf="firstName.invalid && firstName.touched">firstName  is required</p>
+                
+    </div>
+    </div><br>
+   <div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="LastName" class="col-form-label">LastName</label>
+    
+    </div>
+    <div class="col-auto">
+      <input type="text" id="LastName" name="lastName"   #lastName="ngModel" ngModel required class="form-control" aria-describedby="passwordHelpInline">
+    </div>
+    </div><br>
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="N° CIN" class="col-form-label">N° CIN</label>
+    </div>
+    <div class="col-auto">
+      <input type="number" id="CIN" name="Cin" class="form-control" #Cin="ngModel" ngModel  aria-describedby="passwordHelpInline">
+    </div>
+    </div><br>
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="N° tel" class="col-form-label">tel</label>
+    </div>
+    <div class="col-auto">
+      <input type="number" id="tel" name="tel"  #tel="ngModel" ngModel required class="form-control" aria-describedby="passwordHelpInline">
+    </div>
+    </div><br>
+    <div class="row g-3 align-items-center">
+    <div class="col-auto">
+        <label for="Email" class="col-form-label">Email</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="Email" name="email" #email="ngModel" ngModel required class="form-control" aria-describedby="passwordHelpInline">
+    </div>
+    </div>
+    <p>Please select your favorite Web language:</p>
+      <input type="radio" id="M" name="p" #p="ngModel" ngModel required value="M">
+      <label for="M">M</label><br>
+      <input type="radio" id="W" name="p" #p="ngModel" ngModel required value="W">
+      <label for="W">W</label><br>
+ 
+<p>date of birth</p>
+<input id="date" type="date" name="t" #t="ngModel" ngModel required value="2022-01-01">
+<div class="row g-3 align-items-center">
+<div class="col-auto">
+    <label for="relationship" class="col-form-label">relationship</label>
+</div>
+<div class="col-auto">
+  <input type="text" id="relationship" name="relationship"  #relationship="ngModel" ngModel required class="form-control" aria-describedby="passwordHelpInline">
+</div>
+</div><br>
+<div class="row g-3 align-items-center">
+<div class="col-auto">
+    <label for="adress" class="col-form-label">local adress</label>
+</div>
+<div class="col-auto">
+  <input type="text" id="adress" name="local"   #local="ngModel" ngModel class="form-control" aria-describedby="passwordHelpInline">
+</div>
+</div>
+
+<h3>training</h3>
+<h6> inf of establishment</h6>
+
+  <div class="row g-3 align-items-center"> 
+<div class="col-auto">
+    <label for="name" class="col-form-label">name</label>
+</div>
+<div class="col-auto">
+  <input type="text" id="name" name="name"   #name="ngModel" ngModel class="form-control" aria-describedby="passwordHelpInline">
+</div>
+</div><br>
+
+<div class="row g-3 align-items-center">
+<div class="col-auto">
+    <label for="adress" class="col-form-label">local adress</label>
+</div>
+<div class="col-auto">
+  <input type="text" id="adressl" name="adressl"  #adressl="ngModel" ngModel class="form-control" aria-describedby="passwordHelpInline">
+</div>
+</div><br>
+<div class="row g-3 align-items-center">
+<div class="col-auto">
+    <label for="tel" class="col-form-label">tel</label>
+</div>
+<div class="col-auto">
+  <input type="text" id="tell" name="tell"   #tell="ngModel" ngModel class="form-control" aria-describedby="passwordHelpInline">
+</div>
+</div><br>
+<select id="monselect" name="se"   #se="ngModel" ngModel>
+  <option >diploma</option>
+  <option value="bachelor">bachelor</option>
+  <option value="master 1" >master 1</option>
+  <option value="master 2">master 2/0
+    engineer/more bac+5</option>
+</select><br><br>
+<select id="monselect" name="level"   #level="ngModel" ngModel>
+  <option >level</option>
+  <option value="1">bac+1</option>
+  <option value="2">bac+2</option>
+  <option value="3">bac+3</option>
+  <option value="4">bac+4</option>
+  <option value="5">bac+5</option>
+  <option value="6">>bac+5</option>
+</select><br><br>
+<div class="row g-3 align-items-center">
+<div class="col-auto">
+    <label for="speciality
+    " class="col-form-label">speciality
+</label>
+</div>
+<div class="col-auto">
+  <input type="text" id="speciality" name="speciality"     
+  #speciality="ngModel" ngModel  class="form-control" aria-describedby="passwordHelpInline">
+ </div>
+</div>
+
+<h3>internship duration</h3>
+
+<p>start of internship</p>
+<input id="date" type="date" name="e" #e="ngModel" ngModel  >
+<p>end of internship</p>
+<input id="date" type="date" name="d"  #d="ngModel" ngModel  >
+<p>cv:</p>
+<input type="file"  ngModel name="fileUpload" #fileUpload="ngModel"><br><br>
+
+<div class="field padding-bottom--24">
+  <input type="submit" name="submit" class="btn btn-success" value="envoyer">
+</div>
+
+</form>
+
+</div>

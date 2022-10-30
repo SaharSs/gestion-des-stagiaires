@@ -1,0 +1,27 @@
+<div class="container">
+
+    <form  #f="ngForm" (ngSubmit)="update(f)">
+        <input type="text" class="form-control" name="start" [(ngModel)]="dataProduct.start">
+        <input type="text" class="form-control" name="end" [(ngModel)]="dataProduct.end">
+        <input type="text" class="form-control" name="relationship" [(ngModel)]="dataProduct.relationship">
+        <input type="text" class="form-control" name="uid" [(ngModel)]="dataProduct.uid">
+        
+        <select name="topic" ngModel class="form-control">
+          <option value="">--Please choose an option--</option>
+          <option  value="elec">elec</option>
+          <option  value="testing">testing</option>
+          <option  value="inf">inf</option>
+        </select>
+        <select name="tutor" ngModel class="form-control">
+            <option value="">--Please choose an option--</option>
+            <option  value="ahmed">ahmed</option>
+            <option  value="achref">achref</option>
+            <option  value="sami">sami</option>
+            </select>   
+        <button class="btn btn-success" type="submit">Update now!</button>
+      </form>
+      </div>
+      
+
+
+

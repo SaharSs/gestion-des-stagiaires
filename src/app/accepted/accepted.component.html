@@ -1,0 +1,69 @@
+
+<div class="container">
+  <div class="body"  >
+    <br><br>
+<div class="d-flex">
+<input type="text"  class="searchTerm" placeholder="Search Here" [(ngModel)]="term">
+</div>   <div class="body"  >
+    
+    <table id="table" class="table table-bordered">
+   
+     <thead class="table-dark">
+<tr >
+  <th scope="col">firstName</th>
+  <th scope="col">lastName</th>
+  <th scope="col">Cin</th>
+  <th scope="col">tel</th>
+  <th scope="col">email</th>
+  <th scope="col">p</th>
+  <th scope="col">name</th>
+  <th scope="col">adressl</th>
+  <th scope="col">tell</th>
+  <th scope="col">se</th>
+  <th scope="col">level</th>
+  <th scope="col">speciality</th>
+   <th scope="col">cv</th>
+   <th scope="col">state</th>
+   
+  
+  <th scope="col" colspan="3">options</th>
+</tr>
+</thead>
+<tbody  *ngFor="let item of dataArray | filter:term,index as i" >
+  
+       <tr *ngIf="item.state==1" >
+                 <td><h5 class="card-title">{{item.firstName}}</h5></td>
+                  <td><h5 class="card-title">{{item.lastName}}</h5></td>
+                
+                  <td><p class="card-text">{{item.Cin}}</p></td>  
+                  <td><p class="card-text">{{item.tel}}</p></td>
+                   <td><p class="card-text">{{item.email}}</p></td>
+                 
+                  <td><p class="card-text">{{item.p}}</p></td>
+                  <td><p class="card-text">{{item.name}}</p></td>
+                  <td><p class="card-text">{{item.adressl}}</p></td>
+                  <td><p class="card-text">{{item.tell}}</p></td>
+                  <td><p class="card-text">{{item.se}}</p></td>
+                  <td><p class="card-text">{{item.level}}</p></td>
+                  <td><p class="card-text">{{item.speciality}}</p></td>
+              <td></td>
+                  <td ><p class="card-text">{{item.state}}</p></td>
+                 
+                 
+                  <td>
+                    <button  class="btn btn-primary" type="button" (click)="ab(item.id)" > 
+                    absent
+                    </button>
+                  </td>
+                </tr>
+               
+          
+</tbody>
+              </table> 
+              
+             
+</div>
+              <!-- This is the modal -->
+            
+</div>
+</div>

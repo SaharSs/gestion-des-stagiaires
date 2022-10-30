@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="nb">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active"  routerLink="register" *ngIf="!isuser">register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  routerLink="login" *ngIf="!isuser">login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="internship-r" *ngIf="isuser && !isAdmin && !isre">internship-r</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="requested" *ngIf="isre">requested</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="intern-list" *ngIf="isre">intern-list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ad-user" *ngIf="isAdmin">ad-user</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ad-req" *ngIf="isAdmin">ad-req</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ad-intern" *ngIf="isAdmin">ad-intern</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="level" *ngIf="isAdmin">level</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="speciality" *ngIf="isAdmin">speciality</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ad-absence" *ngIf="isAdmin || isre">ad-absence</a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" routerLink="list-abs" *ngIf="isre">list-abs</a>
+          </li>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle"  *ngIf="isre"  data-bs-toggle="dropdown">intern</a>
+            <div class="dropdown-menu fade-down m-0">
+            
+          <li class="nav-item">
+            <a class="nav-link" routerLink="pending" *ngIf="isre">pending</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="refused" *ngIf="isre">refused</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="accepted" *ngIf="isre">accepted</a>
+          </li>
+          </div></div>
+          
+          <button class="btn btn-danger" (click)="logout()"  *ngIf="isuser">Logout</button>	
+        </ul>
+        
+      </div>
+    </div>
+  </nav>

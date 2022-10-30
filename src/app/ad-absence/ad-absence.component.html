@@ -1,0 +1,65 @@
+
+
+  <div class="container">
+    <br><br>
+   
+ 
+<div class="body"  >
+    <div class="d-flex">
+         
+      <input type="text"  class="searchTerm" placeholder="Search Here" [(ngModel)]="term">
+    </div>        
+      <table id="table"  class="table table-bordered">
+     
+       <thead class="table-dark">
+  <tr >
+    <th scope="col">firstName</th>
+    <th scope="col">lastName</th>
+    <th scope="col">Cin</th>
+    <th scope="col">justified</th>
+    <th scope="col">comment</th>
+    <th scope="col">start</th>
+    <th scope="col">end</th>
+    <th scope="col">date</th>
+   
+   
+    <th scope="col" colspan="3">options</th>
+  </tr>
+  </thead>
+  <tbody  *ngFor="let item of da | filter:term,index as i" >
+         <tr >
+                   <td><h5 class="card-title">{{item.firstName}}</h5></td>
+                    <td><h5 class="card-title">{{item.lastName}}</h5></td>
+                  
+                    <td><p class="card-text">{{item.Cin}}</p></td>  
+                    <td><p class="card-text">{{item.fav}}</p></td>
+                    <td><p class="card-text">{{item.comment}}</p></td> 
+                    <td><p class="card-text">{{item.start}}</p></td>
+                      <td><p class="card-text">{{item.end}}</p></td>
+                      <td><p class="card-text">{{item.date}}</p></td>
+                    
+                      <td><button type="button" class="btn btn-primary" (click)="updatep(item.id)">update</button></td>
+                 
+                 
+                 <td><button class="btn btn-danger" (click)="delete(item.id)">delete</button>
+                 </td>
+                
+                  </tr>
+               
+                
+                           
+                
+               
+                       
+             
+                
+                   
+            
+  </tbody>
+                </table> 
+                
+               
+  </div>
+                <!-- This is the modal -->
+  </div>            
+  
